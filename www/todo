@@ -1,0 +1,25 @@
+optimize registration, login and so on
+i. e. remember fields an so on
+require confirmation of email
+and set length of username and password
+
+provide an option to rate papers
+and develop a sorting algorithm
+(for both user search and paper search)
+
+provide an option to comment
+
+provide an option to delete a paper
+
+add links to the fields on the searchpaperaction.php
+
+renew the type processing (Art der Arbeit)
+
+improve session management
+
+find a way to delete the first page of a pdf document
+and replace it with a page using the title supplied by the user in heiha as title
+
+add date to the searchpaper 
+
+urlencode things like viewprofile?username=gorgor

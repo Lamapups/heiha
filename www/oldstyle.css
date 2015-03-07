@@ -1,0 +1,99 @@
+body{
+    background-color: #bebebe;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+#content{
+    width: 1000px;
+    margin: 25px auto 0px;
+    text-align: center;
+}
+
+#header{
+    margin: 25px auto 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #029702;
+    width: 1000px;
+    font-size: 22pt;
+    border: solid 3px #000000;
+}
+
+#sidebar{
+    margin-bottom: auto;
+    padding: 5px;
+    width: 250px;
+    float: left;
+    background: #029702;
+    font-size: 15pt;
+    text-align: left;
+    border: solid 2px;
+}
+
+#main{
+    padding: 10px;
+    float: right;
+    margin-bottom: auto;
+    width: 700px;
+    background: #ffffff;
+    font-size: 12pt;
+    text-align: justify;
+    border: solid 2px;
+}
+
+#entry{
+    width: 600px;
+    margin: 40px;
+    margin-top: 70px;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: solid 2px;
+    border-color: #bebebe;
+
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th{
+    color: #029702;
+    text-align: center;
+}
+
+td{
+    text-align: center;
+}
+
+.date{
+    font-size: 10pt;
+    color: #707070;
+}
+
+.centeredimage{
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+h1{
+    color: #029702;
+    letter-spacing: 3px;
+    font-size: 17pt;
+}
+
+h2{
+    color: #029702;
+    letter-spacing: 2px;
+    font-size: 16pt;
+}
+
+h3{
+    color: #029702;
+    letter-spacing: 1px;
+    font-size: 15pt;
+}

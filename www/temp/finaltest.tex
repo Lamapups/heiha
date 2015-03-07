@@ -1,0 +1,553 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=3cm,right=3cm]{geometry}
+
+\usepackage{setspace}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+
+\usepackage[
+  backend=biber,
+  style=footnote-dw,
+  sortlocale=de_DE,
+  namefont=smallcaps,
+]{biblatex}
+
+%Print title and titleaddons in italics and put a period after them. Prevents stuff like "Bologna, 1994, Amsterdam 1996"
+\DeclareFieldFormat{titleaddon}{\mkbibemph{#1}.}
+\DeclareFieldFormat{booktitleaddon}{\mkbibemph{#1}.}
+\DeclareFieldFormat{title}{\mkbibemph{#1}.}
+\DeclareFieldFormat{booktitle}{\mkbibemph{#1}.}
+\DeclareFieldFormat{journaltitle}{\mkbibemph{#1}.}
+
+\addbibresource{farbeit2.bib} %%Das ist deine Bibliographiedatei
+
+
+%\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{linguex}
+\def\fg{} %linguex und siunitx benutzen beide den Befehl \fg und sind daher ohne diese Umdefinition inkompatibel.
+\usepackage{siunitx}
+%\usepackage[safe]{tipa} %%Linguistikpaket für Internationales Phonetisches Alphabet
+%\usepackge{gb4e} %%Linguistikpaket für verschiedene Sachen, z. B. Beispiele
+%\usepackage{microtype} %für Sperrsatz, Option:[letterspace=125]
+\usepackage{verbatim}
+
+\usepackage[multiple, hang]{footmisc} %multiple footnotes are separated by commas
+\def\footnotemargin{0.4cm}
+
+%\let\eachwordone=\it
+\newcommand{\lat}[1]{\textit{#1}} %for Latin text
+
+\newcommand{\cntrl}[1]{#1} %marks passages which need to be amended or at least checked again.
+
+\onehalfspacing
+
+%\DeclareUnicodeCharacter{00A0}{~}
+
+\begin{document}
+
+\begin{titlepage}
+
+  %\begin{small}
+	\vfill {
+	  \noindent Ruprecht-Karls-Universität Heidelberg \\
+	  Philosophische Fakultät \\
+	  Seminar für Klassische Philologie \\
+	  Wintersemester 2013/2014 \\
+	  Proseminar: Der Prosastil bei Sallust und Livius \\
+	  Dozent: Jonathan Geiger
+	}
+  %\end{small}
+
+  \begin{center}
+	\vfill
+	\Large{\textbf{\textsf{Proseminarsarbeit}}} \\[1cm] %%groß, fett und serifenlos
+	\LARGE{\textbf{\textsf{Zum Gebrauch von Pronomina bei Titus Livius}}} \\[1cm] %%noch größer, fett und serifenlos
+	\Large{\textbf{\textsf{29. Mai 2014}}}
+  \end{center}
+
+  %\begin{small}
+	\vfill{
+	  \noindent Simon Will \\
+	  Alte Schulstraße 7 \\
+	  69118 Heidelberg \\
+	  simon.will@stud.uni-heidelberg.de \\
+	  3. Fachsemester \\
+	}
+  %\end{small}
+
+\end{titlepage}
+
+\tableofcontents
+\thispagestyle{empty} %%weil hier keine Seitenzahl hinkommen soll, default ist nicht 'empty', sondern 'plain'
+\newpage 
+
+\section{Einleitung}
+
+In den gängigen Grammatiken wird auf den Gebrauch der verschiedenen Pronomina vor allem im Hinblick auf die bestehenden Unterschiede nur wenig eingegangen. Es existiert allerdings zu diesem Thema eine größere Menge an wissenschaftlicher Literatur, die verschiedene Aspekte der Pronomina, meist anhand weniger \cntrl{antiker Werke}, untersucht.
+Ziel dieser Arbeit ist zu untersuchen, wie Livius im ersten Buch seines Werks \lat{Ab urbe condita} die Pronomina \lat{is}, \lat{hic}, \lat{ille} und \lat{qui} (nur im relativischen Satzanschluss) verwendet und ob er darin mit anderen Autoren, vornehmlich Caesar und Sallust, übereinstimmt.
+Dabei soll besonders darauf geachtet werden, an welcher Position im Satz die Pronomina auftreten und wie sich die Beschaffenheit der Referenz auf den Gebrauch auswirkt.
+Ich verwende den Begriff \textit{Referenz} für die Beziehung oder die Handlung der Bezugnahme, \textit{Referent} für die außersprachliche Entität, auf die Bezug genommen wird, und \textit{Referend} für den Begriff, der Bezug auf den Referenten nimmt.
+Mitunter verwende ich Formulierungen wie \glqq $X$ referiert auf $Y$.\grqq\ für \glqq $X$ referiert darauf, worauf auch $Y$ referiert.\grqq
+
+Alle Übersetzungen stammen von mir.
+
+\section{Vorgehensweise}
+
+Als Corpus für die Untersuchung diente das erste Buch von \lat{Ab urbe condita}.
+Jedem Vorkommen der vier genannten Pronomina im ersten Buch von \lat{Ab urbe condita} wurden in acht \cntrl{Kategorien} Eigenschaften attribuiert:
+\begin{description} %%Es gibt drei Arten von Aufzählungen: (1) 'enumerate', (2) 'itemize' und (3) 'description. Die Aufzählungszeichen sind dann (1) Zahlen und Buchstaben, (2) Punkte und Striche, bzw. (3) das Wort, das hinter 'item' als Option angegeben ist.
+
+  \item[Kasus] Unterschieden wurde zwischen Nominativ, Genitiv, Dativ, Akkusativ und Ablativ. Einen Vokativ gibt es nicht.
+  \item[Stellung] Unterschieden wurde zwischen initialer und interner Stellung. Als initial wurden dabei auch Vorkommen nach zwingend initial stehenden Wörtern wie \lat{nam} gezählt.\footcite[Siehe dazu][S.\,13--15]{spevak}
+  \item[\cntrl{Begleitung}] Unterschieden wurde zwischen Vorkommen als Attribut und Vorkommen als eigenem Satzglied. Als attributiv wurden auch Genitivattribute wie in \lat{eorum aetas} gezählt.
+  \item[Antezedensfunktion] Unterschieden wurde zwischen Topik, Selbstfokus, Teilfokus und Zukünftigem Topik. Ein Satzglied ist Selbstfokus, wenn es allein den Fokus des Satzes \cntrl{bildet}, Teilfokus dann, wenn es nur Teil der Phrase ist, die den Fokus \cntrl{bildet}. Unterschieden wurden auch verschiedene Topikarten, die in der Auswertung aber stets zusammengefasst werden.
+	Wird ein Pronomen deiktisch verwendet, gibt es kein Antezedens und somit auch keine Antezedensfunktion.
+  \item[Referendenfunktion] Unterschieden wurde nach denselben Kriterien wie bei der Funktion des Antezedens. Nur kann hier natürlich auch bei deiktischem Gebrauch eine Funktion zugewiesen werden.
+  \item[Genus] Unterschieden wurde hier nur danach, ob ein Pronomen Neutrum ist oder nicht.
+  \item[Antezedensgröße] Unterschieden wurde hier danach, ob ein Pronomen nur auf eine einfache Nominalphrase referiert oder auf mehr.
+  \item[Art der Referenz] Unterschieden wurde hier zwischen deiktischem, anaphorischen und kataphorischen Gebrauch.
+
+\end{description}
+
+\noindent In Kategorien wie dem Kasus kann einem Pronomen leicht eine Eigenschaft zugewiesen werden. Vor allem beim Zuweisen einer Funktion kann es aber leicht zu Fehlern kommen. Ein Grund dafür kann sein, dass durch bestehende unterbewusste Hypothesen voreilig über einen Satz geurteilt wird.
+
+
+
+
+
+\section{Kataphorische Verwendung}
+
+\begin{comment}
+Pronomina können bekanntlich phorisch oder deiktisch verwendet werden. Wird ein Pronomen phorisch verwendet, so nimmt es lediglich eine Entität auf, die schon zuvor von einem Antezedens bezeichnet wurde (anaphorisch) oder die im folgenden Text von einem Postzedens bezeichnet wird (kataphorisch).
+Wird ein Pronomen deiktisch verwendet, so nimmt es nicht zwingend bereits Genanntes auf, sondern verweist auf zeigend auf eine meist außertextliche Entität. Im Lateinischen gelten die Pronomen \lat{is} uns \lat{qui} als rein phorische Pronomen, \lat{qui} sogar als rein anaphorisch.
+\lat{hic} und \lat{ille} gelten als deiktisch und phorisch. Die kataphorische Verwendung soll nicht im Mittelpunkt dieser Arbeit stehen. Dennoch sei ein kurzer Blick auf die Verteilung von kataphorischen Vorkommen geworfen.
+\end{comment}
+
+\begin{figure}[h]
+%\begin{table}[h]
+  \centering
+  \begin{tabular}{lccc}
+	\toprule
+	Wort & \lat{is} & \lat{hic} & \lat{ille} \\
+	\midrule
+	Vorkommen (abs.) & $43$ (\SI{15}{\%}) & $4$ (\SI{3}{\%}) & $3$ (\SI{6}{\%})\\
+	Vorkommen (rel.) & \SI{86}{\%} & \SI{8}{\%} & \SI{6}{\%}\\
+	\bottomrule
+  \end{tabular}
+\caption[Kataphorisch]{Häufigkeit kataphorischer Verwendung\footnotemark }
+%\footnote{Lesebeispiel: Im Corpus kommt \lat{is} 43 Mal vor. Das sind \SI{15}{\%}aller Vorkommen von \lat{is} und \SI{86}{\%} aller kataphorischen Vorkommen der vier Pronomina.}
+\label{kataphorisch}
+%\end{table}
+\end{figure}
+
+\footnotetext{Lesebeispiel: $43$ und damit \SI{15}{\%} der Vorkommen von \lat{is} sind kataphorisch und \SI{86}{\%} aller kataphorischen Referenzen geschehen durch \lat{is}.}
+
+\noindent Wie erwartet ist \lat{is} das häufigste kataphorische Pronomen, wobei diese Zahl vor allem durch die vielen Referenzen auf Relativsätze wie in Beispiel~\ref{sepultus} zustande kommt. 
+
+\ex.
+\label{sepultus}
+\lat{Is} [\lat{Aventinus}] \lat{sepultus in eo colle qui nunc pars Romanae est urbis, cognomen colli fecit.} (Liv. 1.3.9)
+\trans Dadurch, dass dieser auf dem Hügel, der nun ein Teil der römischen Stadt ist, begraben wurde, gab er dem Hügel seinen Namen.
+
+Andere Referenzen geschehen fast ausschließlich auch auf Nebensätze, zum Beispiel solche, die durch \lat{ut}\footnote{Liv. 1.17.11, 1.21.1, 1.21.2.} oder \lat{ubi}\footnote{Liv. 1.6.3, 1.25.8.} eingeleitet werden. In Liv. 1 gibt es keinen Fall, in dem \lat{is} auf einen ganzen Hauptsatz oder sogar auf mehrere Sätze referiert.
+Im Gegensatz dazu kann man schon an den wenigen kataphorischen Vorkommen von \lat{hic} und \lat{ille} eine Tendenz beobachten, sich eher auf einen oder mehrere Hauptsätze zu beziehen. Das wird am Beispiel \ref{illudte} deutlich.
+\ex.
+%\label{kataphorischgross}
+%\a.
+%\label{huncordinem}
+%[\ldots] \lat{tum} [\lat{Servius Tullius}] \lat{classes centuriasque et hunc ordinem ex censu discripsit, vel paci decorum vel bello.} [Es folgt eine lange Beschreibung der Ständeordnung.] (Liv. 42.5)
+%\trans [\ldots] dann schrieb er dem Zensus gemäß die Menschen Volksklassen und Zenturien sowie der folgenden Ständeordnung zu, die dem Frieden wie dem Kriege angemessen sein sollte.\\
+%\b.
+\label{illudte}
+\lat{Illud te, Tulle, monitum velim: Etrusca res quanta circa nos teque maxime sit, quo propior, hoc magis scis.} (Liv. 23.4)
+\trans Darauf, Tullius, will ich dich aufmerksam machen: Welch große Macht das Reich der Etrusker um uns und vor allem um dich herum hat, weißt du am besten, weil du ihm ja näher bist als wir.
+
+In \ref{illudte} bezieht sich \lat{illud} auf den folgenden Hauptsatz.
+Es liegt nahe, anzunehmen, dass \lat{is} hier nicht genügend \emph{Codingmaterial} liefert, um so großen Inhalt aufzugreifen.\footnote{Siehe dazu \ref{coding} und \ref{grInh}.}
+
+
+
+
+\section{Anaphorische und deiktische Verwendung}
+
+
+\subsection{Stellung}
+
+Ergebnisse der Untersuchung der Stellung anaphorischer Pronomina sind in Tabelle~\ref{stellanaph} dargestellt.
+
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{lcccc}
+	\toprule
+	Wort & \lat{is} & \lat{hic} &\lat{ille} & \lat{qui}\\
+	\midrule
+	Initial & $98$ (\SI{47}{\%}) & $68$ (\SI{74}{\%}) & $15$ (\SI{43}{\%}) & $26$ (\SI{100}{\%})\\
+	Intern & $111$ (\SI{53}{\%}) & $24$ (\SI{26}{\%}) & $20$ (\SI{57}{\%}) & $0$ (\SI{0}{\%})\\
+	Gesamt (\SI{100}{\%}) & $209$ & $92$ & $35$ & $26$\\
+	\bottomrule
+  \end{tabular}
+  \caption{Stellung anaphorischer Pronomina}
+  \label{stellanaph}
+\end{table}
+
+\noindent \lat{Is} scheint weder initiale noch interne Stellung zu favorisieren. Das findet auch \textsc{Spevak} in Caesars \lat{Bellum Civile}, während sie in Sallusts \lat{Bellum Catilinae} eine leichte Tendenz zur initialen Stellung findet.\footcite[S.\,75]{spevak}
+\textsc{Pennell Ross} hingegen findet bedeutend mehr initiale Vorkommen, obwohl auch sie das \lat{Bellum Civile} untersucht.\footcite[hier S.\, 514f. \textsc{Pennell Ross} untersucht nur substantivische Vorkommen, während \textsc{Spevak} auch adjektivische Vorkommen zählt. Trotzdem ist die Diskrepanz an einigen Stellen zu groß, um nur dadurch erklärt zu werden.]{ross96} 
+In meiner Untersuchung ist \lat{is} im Nominativ häufiger initial, in anderen Kasus eher intern zu finden.\footcite[Vgl.][S.\,75]{spevak}
+\lat{Hic} bevorzugt deutlich initiale Stellung in allen Kasus.\footcite[Vgl.][S.\,75]{spevak}\footcite[Vgl.][hier S.\,514f.]{ross96}
+\lat{Ille} zeigt eine schwache Tendenz zur internen Stellung, die im Dativ am stärksten ist.
+
+Aufgrund der kleinen Anzahl an Vorkommen sind allerdings die meisten durch Zählen gewonnenen Erkenntnisse über das Verhalten von \lat{ille} statistisch nicht signifikant.
+In den meisten dieser Beobachtungen stimmen die Ergebnisse aus Liv. 1 aber mit den Ergebnissen von \textsc{Spevak} und \textsc{Ross} aus Caesar und Sallust überein.
+Attributives \lat{ille} ist bei Livius jedoch bei weitem nicht so selten wie bei Caesar und Sallust.
+
+Überhaupt nicht verwunderlich ist natürlich, dass \lat{qui} ausschließlich in initialer Position auftritt.
+
+
+\subsection{Pragmatische Funktion des Referenden}
+\label{referend}
+
+Es ist bekannt, dass die Wortstellung im Lateinischen keinen so steifen Regeln unterliegt wie es zum Beispiel im Englischen der Fall ist. Jedoch wurde schon mehrmals
+%\cntrl{hier müssen Verweise hin!}
+festgestellt, dass pragmatische Aspekte die lateinische Wortstellung beeinflussen. Als unmarkierte Abfolge gilt dabei in Aussagesätzen, dass das Topik dem Fokus vorausgeht.
+\footcite[Hier S.\,153. Laut Panhuis steht das Verb dennoch nach dem Fokus, sofern es nicht selbst Topik ist.]{panhuis84}
+\textsc{De Jong} beteuert jedoch, dass \glqq es keine direkte Beziehung zwischen Topikfunktion und initialer Stellung im Satz [gibt].\grqq
+\footcite[``There is no straightforward relation between Topic function and first position in the clause.''][hier S.\,527]{dejong89}
+Ihm zufolge stehen Topik-Konstituenten vor allem bei Topikwechsel initial.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{l*{6}{c}}
+	\toprule
+	Wort & \multicolumn{2}{c}{\lat{is}} & \multicolumn{2}{c}{\lat{hic}} & \multicolumn{2}{c}{\lat{ille}} \\
+	{} & Initial & Intern & Initial & Intern & Initial & Intern \\
+	\midrule
+	Topik & $96$ (\SI{98}{\%}) & $96$ (\SI{87}{\%}) & $72$ (\SI{100}{\%}) & $25$ (\SI{64}{\%}) & $19$ (\SI{95}{\%}) & $23$ (\SI{79}{\%}) \\
+	Selbstfokus & $1$ (\SI{1}{\%}) & $3$ (\SI{3}{\%}) & $0$ (\SI{0}{\%}) & $0$ (\SI{0}{\%}) & $0$ (\SI{0}{\%}) & $1$ (\SI{3}{\%}) \\
+	Teilfokus & $1$ (\SI{1}{\%}) & $11$ (\SI{10}{\%}) & $0$ (\SI{0}{\%}) & $14$ (\SI{36}{\%}) & $1$ (\SI{5}{\%}) & $5$ (\SI{17}{\%}) \\
+	Gesamt (\SI{100}{\%}) & $98$ & $110$ & $72$ & $39$ & $20$ & $29$ \\
+	\bottomrule
+  \end{tabular}
+  \caption{Stellung und Referendenfunktion}
+  \label{stellprag}
+\end{table}
+
+\noindent Tabelle~\ref{stellprag} zeigt, dass alle drei Pronomina eine klare Tendenz haben als Topik zu fungieren. Diese Tendenz ist bei \lat{is} am stärksten ausgeprägt. 
+Darüber hinaus kann man erkennen, dass initiale Stellung fast nur bei topikalen Pronomina vorkommt. Ein typisches Beispiel für einen solchen Fall bieten die Beispiele \ref{eaconfessio} und \ref{himoti}, in denen \lat{Ea} und \lat{Hi} initial stehen und als Topik fungieren.
+Darüber hinaus dienen die Pronomina in beiden Fällen dem Topikwechsel.
+Das Pronomen \lat{qui} bildet in allen Vorkommen das Topik des Satzes.
+
+\ex.
+\a.
+\label{eaconfessio}
+[\lat{Servius}] \lat{Saepe iterando eadem perpulit tandem, ut Romae fanum Dianae populi Latini cum populo Romano facerent. Ea erat confessio caput rerum Romam esse }[\ldots]\lat{.} (Liv. 1.45.2--3)
+\trans Indem er wiederholt darauf bestand, setzte Servius schließlich durch, dass die latinischen Völker zusammen mit dem römischen Volk der Diana in Rom einen Tempel weihten. Das war das \cntrl{Eingeständnis}, dass Rom die Hauptstadt des Staates ist.
+\b.
+\label{himoti}
+\lat{Praecones ab extremo orsi primos excivere Albanos. Hi novitate etiam rei moti ut regem Romanum contionantem audirent proximi constitere.} (Liv. 1.28.2)
+\trans Ganz außen beginnend riefen die Herolde als erste die Albaner herbei. Diese stellten sich, auch wegen der Neuheit der Sache, ganz nahe beim römischen König auf, um seine Ansprache zu hören.
+
+\ex.
+\a.
+\label{manavithaec}
+\lat{Fuisse credo tum quoque aliquos qui discerptum regem patrum manibus taciti arguerent; manavit haec quoque sed perobscura fama;} (Liv. 1.16.4)
+\trans Schon damals gab es, wie ich glaube, Leute, die im Geheimen kundgaben, der König sei durch die Hände der Senatoren zerrissen worden. Dieses Gerücht nämlich blieb bis heute, wenn auch stark verdunkelt.
+\b.
+\label{apudeos}
+\lat{se} [\lat{Servium}] \lat{quidem} [\ldots] \lat{nihil usquam sibi tutum nisi apud hostes L. Tarquini credidisse.} [\ldots] \lat{quod si apud eos} [\lat{Gabios}] \lat{supplicibus locus non sit, pererraturum se omne Latium Volscosque se inde et Aequos et Hernicos petiturum} [\ldots]\lat{.} (Liv. 1.53.7--8)
+\trans Er habe geglaubt, dass es für ihn nirgendwo außer bei Tarquiniens Feinden sicher sei. Wenn aber bei ihnen kein Platz für Flehende sei, dann werde er ganz Latium durchschweifen, die Volsker und dann die Aequer und die Herniker aufsuchen.
+
+Beispiel~\ref{manavithaec} zeigt einen Fall, in dem das Topik intern steht. Auch das ist, wie man der Tabelle entnehmen kann, nicht unüblich.
+Der Grund dafür ist meist, dass Faktoren auftreten, die dafür sorgen, dass eine andere Phrase initial steht.
+Im Beispiel~\ref{manavithaec} wird bei \lat{manavit} angewandt, was \textsc{Spevak} \emph{Focus-First-Strategy} nennt.\footcite[S.\,41]{spevak}
+\lat{manavit} wird hier mit \lat{perobscura} kontrastiert: Das Gerücht ist zwar geblieben, doch nur sehr verdunkelt.
+Beispiel~\ref{apudeos} zeigt das einzige Vorkommen einer initialen Form von \lat{is}, die selbst Fokus ist. Topik ist im entsprechenden Satz das Erhalten von Zuflucht. Der Fokus \lat{apud eos} steht im Kontrast mit den anderen Völkern und steht deshalb initial.
+\footcite[\textsc{De Jong} nennt als Konstituenten, die initiale Stellung bevorzugen, anaphorische Pronomina, topikale und kontrastive Konstituenten und Konstituenten, die Emphase tragen oder den Situationsrahmen beschreiben.][{}]{dejong89}
+
+Interessant ist auch zu betrachten, welchen Einfluss die Art der Referenz auf die Verteilung der Referendenfunktionen hat.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l*{5}{c}}
+\toprule
+Wort & \lat{is}	& \multicolumn{2}{c}{\lat{hic}} & \multicolumn{2}{c}{\lat{ille}} \\
+{} & {} & anaphorisch & deiktisch & anaphorisch & deiktisch  \\
+\midrule
+Topik & $192$ (\SI{92}{\%}) & $90$ (\SI{98}{\%}) & $7$ (\SI{37}{\%}) & $32$ (\SI{91}{\%}) & $10$ (\SI{71}{\%}) \\
+Selbstfokus & $4$ (\SI{2}{\%}) & $0$ (\SI{0}{\%}) & $1$ (\SI{5}{\%}) & $0$ (\SI{0}{\%}) & $1$ (\SI{7}{\%}) \\
+Teilfokus & $12$ (\SI{6}{\%}) & $2$ (\SI{2}{\%}) & $11$ (\SI{58}{\%}) & $3$ (\SI{9}{\%}) & $3$ (\SI{21}{\%}) \\
+Gesamt (\SI{100}{\%}) & $208$ & $92$ & $19$ & $35$ & $14$ \\
+\bottomrule
+\end{tabular}
+\caption{Referendenfunktion und Art der Referenz}
+\label{refprag}
+\end{table}
+
+\noindent Tabelle \ref{refprag} zeigt schon beim ersten Hinsehen, dass \lat{is}, \lat{hic} und \lat{ille} bei anaphorischem Gebrauch vor allem als Topik fungieren (siehe dazu auch Abschnitt \ref{antez}). 
+An dieser Stelle ist auch die Unterscheidung zwischen Selbstfokus und Teilfokus bedeutend, denn auch wenn es durchaus einige Fälle gibt, in denen ein Pronomen in  einer fokalen Phrase steht, so gibt es nur wenige Fälle, in denen es selbst den Fokus bildet.
+Bei deiktischem Gebrauch dagegen scheint die Tendenz zum Topik nicht so stark zu sein. Deiktisches \lat{hic} kommt sogar öfter in fokalen Phrasen vor.
+Aus meiner Untersuchung geht auch hervor, dass deiktische Vorkommen von \lat{hic} im Gegensatz zu anaphorischen (siehe Tabelle \ref{stellanaph}) vor allem intern zu finden sind.
+Das findet auch \textsc{de Jong}.\footcite[S.\,525]{dejong89}
+Auch dieser Zusammenhang unterstützt die bekannte These zur initialen Stellung topikaler Konstituenten.
+Leider sind vor allem bei \lat{ille} die Daten zu den deiktischen Vorkommen zu begrenzt, um statistisch signifikante Aussagen treffen zu können.
+Beispiel \ref{ultimumillud} zeigt ein deiktisches Pronomen in einer fokalen Phrase.
+
+\ex.
+\label{ultimumillud}
+[\ldots] [\lat{Albani}] \lat{deficiente consilio rogitantesque alii alios, nunc in liminibus starent, nunc errabundi domos suas ultimum illud visuri pervagarentur.} 
+\trans Alle \cntrl{Besonnenheit} kam abhanden und die Einwohner von Alba fragten einer den andern \cntrl{um Rat} und bald blieben sie innerhalb ihrer Grenzen, bald durchstreiften sie umherirrend ihre Häuser, um sie jenes letzte Mal zu sehen.
+
+
+\subsection{Das Antezedens}
+\label{antez}
+
+\subsubsection{Pragmatische Funktion des Antezedens}
+
+Beim Untersuchen des Gebrauchs von Pronomina muss unbedingt auch das Antezedens berücksichtigt werden.
+Da deiktische Pronomina unmittelbar auf ihren Referenten referieren, existiert bei deiktischer Referenz kein Antezedens. Deshalb wird in diesem Abschnitt nur der anaphorische Fall behandelt.
+Zu den pragmatischen Funktionen der Antezedenzien der verschiedenen Pronomina wurden schon viele Untersuchungen gemacht, die hier leicht vereinfacht dargestellt werden:
+
+\textsc{Bolkestein} und \textsc{van de Grift} untersuchen nur Vorkommen von Pronomina als Subjekt und finden das Folgende: 
+	\lat{Is} referiert auf ein Zukünftiges Topik, eher nicht auf ein Gegebenes Topik oder einen Fokus. 
+	\lat{Hic} referiert auf einen Fokus oder ein Zukünftiges Topik und \lat{ille} referiert auf ein Gegebenes Topik oder einen Fokus.
+	\footcite[hier S.\,287--289]{bolkestein94}
+Laut \textsc{de Jong} referiert \lat{is} in obliquer Form auf ein Gegebenes Topik,
+	\footcite[hier S.\,506]{dejong96}
+	\lat{hic} in obliquer Form auf ein Zukünftiges Topik oder einen Fokus.
+	\footcite[hier S.\,504f.]{dejong96}
+	\lat{Ille} referiert ihm zufolge auf einen Fokus oder ein Gegebenes Topik.
+	\footcite[hier S.\,504]{dejong96}
+\textsc{Spevak} zufolge referiert \lat{is} auf einen Fokus,
+	\footcite[S.\,76f.]{spevak}
+	ein Zukünftiges Topik
+	\footcite[S.\,58]{spevak}
+	oder auf ein Gegebenes Topik,
+	\footcite[S.\,80]{spevak}
+	\lat{hic} nur auf ein Zukünftiges Topik
+	\footcite[S.\,57f.]{spevak}
+	oder einen Fokus.
+	\footcite[S.\,76f.]{spevak}
+	\textsc{Spevak} widerspricht explizit \textsc{Bolkestein} und \textsc{van de Grift} und behauptet, dass \lat{ille} auf keinen Fokus, sondern nur auf ein Gegebenes Topik referiert.
+	\footcite[S.\,89]{spevak}
+\textsc{Toth} stellt fest, dass \lat{is} und \lat{hic} beide sowohl auf ein Gegebenes Topik als auch auf ein Zukünftiges Topik referieren können.
+	\footcite[hier S.\,180--182]{toth94}
+	Mit fokalen Konstituenten beschäftigt er sich nicht.
+\textsc{Pennell Ross} macht nur die Aussage, dass die \glqq vorrangige Rolle\grqq\ von \lat{hic} ist, ein Gegebenes Topik fortzusetzen.
+	\footcite[hier S.\,515]{ross96}
+
+Offensichtlich unterscheiden sich die Befunde zu diesem Thema beträchtlich. Das kann zu einem Teil dadurch erklärt werden, dass verschiedene Texte untersucht wurden, wenngleich die meisten von diesen einer Art Geschichtsschreibung und alle der Prosa zuzuordnen sind.
+Zu einem anderen Teil durch ein leicht verschiedenes Konzept der Begriffe Gegebenes Topik, Zukünftiges Topik und Fokus und darüber hinaus durch meine vereinfachte Darstellung.
+Meine Untersuchung liefert die folgenden Ergebnisse.
+
+
+\begin{table}[h]
+\centering
+  \begin{tabular}{l*{4}{c}}
+  \toprule
+	Wort & \lat{is} & \lat{hic} & \lat{ille} & \lat{qui} \\
+  \midrule
+	Topik & $84$ (\SI{35}{\%}) & $10$ (\SI{11}{\%}) & $14$ (\SI{40}{\%}) & $5$ (\SI{19}{\%}) \\
+	Selbstfokus & $107$ (\SI{45}{\%}) & $69$ (\SI{74}{\%}) & $8$ (\SI{23}{\%}) & $13$ (\SI{50}{\%}) \\
+	Teilfokus & $50$ (\SI{21}{\%}) & $14$ (\SI{15}{\%}) & $13$ (\SI{37}{\%}) & $8$ (\SI{31}{\%}) \\
+	Gesamt (\SI{100}{\%}) & $243$ & $93$ & $35$ & $26$ \\
+  \bottomrule
+  \end{tabular}
+  \caption{Antezedensfunktion}
+  \label{antezedens}
+\end{table}
+
+
+Tabelle~\ref{antezedens} zeigt, dass vor allem \lat{hic} und \lat{qui} bevorzugt auf ein fokales Antezedens referieren. Weniger deutlich ist das auch bei \lat{is} und noch weniger deutlich bei \lat{ille} der Fall.
+Paradebeispiele für die Einführung eines Zukünftigen Topiks sind Fälle wie in \ref{cicfuttop}. Solche meidet Livius aber eher.\footnote{Siehe aber Liv. 5.28.3.}
+Problematisch ist, dass jede neu eingeführte Entität, die im folgenden Diskurs als Topik wieder auftritt, beim ersten Auftritt gewissermaßen als Zukünftiges Topik bezeichnet werden kann.
+Es wurden für diese Arbeit aber nur Fälle als Zukünftiges Topik gezählt, bei denen ein eigener Satz verwendet wird, nur um sie in den Diskurs einzuführen.
+Davon existieren in Liv. 1 nur zwei Fälle, in denen beide Male \lat{is} verwendet wird, um auf das Zukünftige Topik zu referieren. Beide dieser Fälle sind in der Tabelle als Selbstfokus eingeordnet.
+Einen davon zeigt Beispiel~\ref{lucuserat}, in dem auf \lat{lucus} sowohl \lat{Quo} als auch \lat{eum lucum} referieren.
+
+\ex.
+\a.
+\label{cicfuttop}
+\lat{Erat comes eius} [\lat{Verris}] \lat{ Rubrius quidam, homo factus ad istius libidines} [\ldots] (Cic. Ver. 2.1.64)
+\trans Verres hatte einen gewissen Begleiter namens Rubrius, ein Mann wie geschaffen für seine Begierden.
+\b.
+\label{lucuserat}
+\lat{Lucus erat quem medium ex opaco specu fons perenni rigabat aqua. Quo quia se persaepe Numa sine arbitris velut ad congressum deae inferebat, Camenis eum lucum sacravit, quod earum ibi concilia cum coniuge sua Egeria essent.} (Liv. 1.21.3)
+\trans Es gab einen Hain, durch den eine Quelle aus einer schattigen Höhle heraus das ganze Jahr über mitten hindurch Wasser leitete.
+Da sich Numa dorthin sehr oft ohne Beobachter begab, als ob er sich mit der Göttin träfe, weihte er diesen Hain den \lat{Camenae}, weil diese sich dort mit seiner Gattin Egeria zu treffen pflegten.
+
+Die Beispiele \ref{huicduos} und \ref{tumille} zeigen Verwendungen von \lat{hic} beziehungsweise \lat{ille}, die Schwierigkeiten bereithalten, die vermutlich zu den Unterschieden in den oben dargestellten fremden Ergebnissen beitragen.
+In \ref{huicduos} wird \lat{flaminem} zuächst durch \lat{eum} topikalisiert,\footnote{Zur Topikalisierung siehe unten.}
+Dann wird durch \lat{Huic} noch einmal auf den Priester referiert.
+Dabei kann entweder angenommen werden, dass das zugehörige Antezedens das topikale \lat{eum} ist, oder dass abermals auf die fokale NP \lat{flaminem} referiert wird.
+% Gehört hier eigentlich nicht mehr hin: Unabhängig davon, wie Fälle wie dieser aufzulösen sind, ist aber die Tatsache, dass bei Livius \lat{hic} -- wenn auch selten -- topikale Konstituenten aufgreift.
+In \ref{tumille} wird durch \lat{ille} auf \lat{ei, quem} \ldots\ referiert. Topik des \lat{inquit}-Satzes ist der durch Ø ausgedrückte \lat{Ancus Marcius}.
+Doch \lat{ei, quem} \ldots\ ist auch nicht Fokus des Satzes. In meiner Untersuchung wurde es als Teilfokus eingeordnet, doch besser ist wohl, für eine genauere Untersuchung solcher Fälle auf eine elaboriertere Terminologie wie die von \textsc{Prince} zurückzugreifen.
+\footcite[Siehe dazu][{}]{prince}
+In dieser würde \lat{ei, quem} \ldots\ wohl als \emph{Containing Inferrable} eingestuft werden, also als Referenz auf etwas Neues, das durch die mitgelieferte Information im Relativsatz entschlüsselt werden kann.
+
+\ex.
+\a.
+\label{huicduos}
+[\ldots] [\lat{Numa Pompilius}] \lat{flaminem Iovi adsiduum sacerdotem creavit insignique eum veste et curuli regia sella adornavit. Huic duos flamines adiecit} [\ldots] (Liv. 1.20.2)
+\trans Numa Pompilius setzte als Flamen für Jupiter einen festen Priester ein und zeichnete ihn mit einer besonderen Kleidung und dem königlichen Wagenstuhl aus. Ihm fügte er zwei weitere Flamen hinzu.
+\b.
+\label{tumille}
+[\ldots] \lat{`dic,'} [\lat{Ancus Marcius}] \lat{inquit ei quem primum sententiam rogabat, `quid censes?' Tum ille: }[\ldots] (Liv. 1.32.11--12)
+\trans \glqq Sprich,\grqq\ sagte Ancus Marcius zu dem, den er zuerst nach seiner Meinung fragte, \glqq was meinst du?\grqq\ Dann antwortete jener: [\ldots].
+
+Jedenfalls referiert \lat{ille} in \ref{tumille} auf eine nichttopikale NP und bildet selbst den Fokus. Hier kann also nicht von einer Fortsetzung des Topiks durch \lat{ille} gesprochen werden. Vielmehr kann hier beobachtet werden, was \textsc{Spevak} \emph{Topikalisierung} nennt.
+\footcite[S.\,76]{spevak}
+Der Begriff beschreibt genau das: Es wird auf eine nichttopikale NP, oft einen Fokus, referiert und der Referend bildet selbst ein Topik.
+\lat{Ille} ist in dieser Funktion nicht häufig, \lat{is} und vor allem \lat{hic} und \lat{qui} aber treten am häufigsten topikaliserend auf.
+\ref{topicalisation} zeigt Beispiele für Topikalisierung.
+
+\ex.
+\label{topicalisation}
+\a.
+\label{eiquesacra}
+\lat{Pontificem deinde Numam Marcium Marci filium ex patribus} [\lat{Numa}] \lat{legit eique sacra omnia exscripta exsignataque attribuit} [\ldots] (Liv. 1.20.5)
+\trans Als Pontifex verlas Numa den Numa Marcius, Sohn des Senators Marcus, und gab ihm alle heiligen Bräuche \cntrl{aufgeschrieben und genau verzeichnet}.
+\b.
+\label{nominahis}
+[\ldots] \lat{uxore ibi} [\lat{Tarquinios}] \lat{ducta duos filios genuit. Nomina his Lucumo atque Arruns fuerunt.} (Liv. 1.34.2)
+\trans Durch die Heirat seiner Frau nach Tarquinii geführt zeugte er zwei Söhne. Ihre Namen waren Lucumo und Arruns.
+%\c.
+%\label{quemut}
+%\lat{Eo accedebat ut in caritate civium nihil spei reponenti metu regnum tutandum esset. Quem ut pluribus incuteret cognitiones capitalium rerum sine consiliis per se solus exercebat.} (Liv. 1.49.4)
+%\trans Dazu kam, dass er, weil er keinerlei Hoffnung auf die Zuneigung seiner Bürger setzte, seine Herrschaft durch Furcht schützen musste. Um diese mehr Menschen einzuflößen, hielt er in Fällen von Kapitalverbrechen ohne Berater selbst Gericht. 
+
+Topikalisierung ist außerdem eine typische Art, eine Entität zum zweiten Male anzuführen und damit eine Referenzkette zu beginnen.
+\textsc{Bolkestein} und \textsc{van de Grift} haben Referenzketten untersucht und beobachtet, dass in der Tat \lat{is} und \lat{hic} öfter als Ø, volle NPs und auch als \lat{ille} die zweite Position in Referenzketten bilden. \lat{Qui} wurde dabei nicht untersucht.
+\footcite[hier S.\,290]{bolkestein94}
+Das heißt zwar nicht zwangsläufig, dass sie auch zur Topikalisierung dienen, denn NPs können auch als Topik fungieren, wenn sie zum ersten Mal im Diskurs auftauchen.
+Dennoch sind NPs, die eine Entität zum ersten Mal erwähnen, meist fokal, gerade dann, wenn sie im folgenden Text das Topik bilden sollen.
+Dass \lat{hic} und \lat{is} oft an zweiter Position in einer Referenzkette vorkommen, unterstützt also durchaus meine Beobachtung, dass sie häufig topikalisierend auftreten.
+
+
+\subsubsection{Codingmaterial}
+\label{coding}
+
+Auch wenn die vier Pronomina verschiedene Präferenzen im Bezug auf die pragmatische Funktion ihres Antezedens haben mögen, so reichen diese bei weitem nicht aus, um zu erklären, warum an manchen Stellen ein bestimmtes Pronomen und kein anderes steht.
+Ein weiteres Kriterium ist bei \textsc{Givón} zu finden. Er formuliert ein Prinzip, nach dem ausgewählt wird, wie etwas als Topik weitergeführt werden kann:
+
+\begin{quote}
+Je unterbrechender, überraschender, diskontinuierlicher oder schwerer zu verarbeiten ein Topik ist, desto mehr \emph{\cntrl{Codingmaterial}} muss ihm \cntrl{zugeteilt} werden.
+\footcite[``The more disruptive, surprising, discontinuous or hard to process a Topic is, the more \emph{coding material} must be assigned to it.'' Ursprüngliche Hervorhebung.][hier S.\,18]{givon}
+\end{quote}
+
+\noindent Auf diesem Prinzip beruht ihm zufolge, dass die Ø am wenigsten und eine NP mit Substantiv am ehesten ein diskontinuierliches Topik aufgreift.
+\footcite[hier S.\,18]{givon}
+Die Pronomina befinden sich dazwischen. Doch auch zwischen ihnen lassen sich Unterschiede erkennen.
+Es ist Konsens, dass \lat{is} \glqq das schwächste unter allen Demonstrativen\grqq\ ist.
+\footcite[§\,118, Punkt 1.]{kuehner}
+Das heißt auch, dass es nur verwendet werden kann, wenn im Kontext ganz klar ist, was das Antezedens ist. Einen Fall, in dem \lat{is} wohl nicht genügt, zeigt Beispiel~\ref{hictarquinius}.
+
+\ex.
+\label{hictarquinius}
+\lat{Hic L. Tarquinius---Prisci Tarquini regis filius neposne fuerit parum liquet; pluribus tamen auctoribus filium ediderim---fratrem habuerat Arruntem Tarquinium mitis ingenii iuvenem.} (Liv. 1.46.4)
+\trans Dieser Lucius Tarquinius -- ob er der Sohn oder der Enkel des Königs Tarquinius Priscus war, ist unklar; dennoch würde ich ihn mit den meisten Berichterstattern als Sohn angeben -- hatte Arruns Tarquinius zum Bruder, einen jungen Mann von sanfter Art.
+
+Unmittelbar vor dem Beispielsatz befindet sich ein Abschnitt, in dem Tarquinius Topik ist.
+Mit Liv. 1.46.3 folgt ein Einschub des Erzählers und \lat{Tarquinius Superbus} muss als Topik wieder neu etabliert werden. Das kann nicht durch einfaches \lat{Tarquinius} geschehen, denn auch \lat{Tarquinius Priscus} könnte gemeint sein. \lat{Is Tarquinius} ist zum einen aus demselben Grunde schwierig, zum anderen deshalb, weil das Antezedens durch den Einschub recht weit zurückliegt.
+\lat{Hic Tarquiius} verfügt offenbar über mehr Coding, sodass es über den Einschub \glqq hinwegreferieren\grqq\ kann und außerdem klar macht, dass nicht \lat{Tarquinius Priscus} gemeint ist.
+Letzteres wird dadurch begünstigt, dass \lat{hic} üblicherweise Entitäten als Referenten hat, die erst genannt wurden oder dem Sprecher\footnote{Das kann beoachtet werden, wenn \lat{hic} deiktisch auf Livius' Zeit referiert. Beispiele dafür sind Liv. 1.5.1 und Liv. 1.9.12.}
+nahe stehen. Dagegen referiert \lat{ille} bekanntlich eher auf dem Sprecher fern liegende Entitäten.
+\footcite[Vgl.][§\,118, Punkt 2.]{kuehner}
+
+\begin{comment}
+Oft sind diese Nähe und diese Ferne gedanklich oder räumlich und damit außertextlich. Natürlich können aber auch -- vor allem bei der typischen Gegenüberstellung von \lat{hic} und \lat{ille} -- Nähe und Ferne im Diskurs gemeint sein, was in \ref{hiilli} der Fall ist.
+
+\ex.
+\label{hiilli}
+\lat{Tum Sabinae mulieres} [\ldots] \lat{se inter tela volantia inferre,} [\ldots] \lat{dirimere iras, hinc patres$_i$, hinc viros$_j$ orantes,} [\ldots] \lat{ne parricidio macularent partus suos, nepotum illi$_j$, hi$_i$ liberum progeniem.} (Liv. 1.13.1f.)
+\trans Dann warfen sich die sabinischen Frauen zwischen die fliegenden Geschosse, trennten die Erzürnten und baten auf der einen Seite ihre Väter, auf der anderen ihre Männer, nicht durch Verwandtenmord ihre Nachkommen -- jene ihre Enkel, diese ihre Kinder -- zu beflecken.
+
+\end{comment}
+
+Es gibt Fälle, in denen es schwierig ist, zu erkennen, warum \lat{ille} und nicht \lat{hic} verwendet wird. Einer davon ist \ref{necilli}, in dem \lat{illi} auf die Vejenter referiert.
+\lat{Ii} scheidet als Alternative zu \lat{illi} wohl sofort aus, da mit den Fidenaten ein weiterer Kandidat als Antezedens vorliegt und schon deswegen mehr Codingmaterial erforderlich ist.
+Laut Pinkster steht \lat{ille} oft dann, wenn das Topik gewechselt wird.
+\footcite[hier S.\,377]{pinkster87}
+Doch das Topik wird oft auch mit \lat{hic} und \lat{is} gewechselt, wie viele schon angeführte Beispiele zeigen.
+Was den Topikwechsel durch \lat{ille} ausmacht, ist der Kontrast zum vorausgehenden Topik.
+\footcite[S.\,90]{spevak}
+In \ref{necilli} zum Beispiel sind die Vejenter die \emph{Gegner des Tullus}, was ein sehr typischer Kontrast in historischen und vor allem militärischen Texten ist.
+
+
+\ex.
+\label{necilli}
+\lat{Instat Tullus fusoque Fidenatium cornu in Veientem alieno pavore perculsum ferocior redit. Nec illi tulere impetum.} (Liv. 1.17.10)
+\trans Tullus drängte den Fidenaten nach und kehrte nach ihrer Vernichtung noch kriegerischer ins vejentische Gebiet zurück, das durch die Furcht der anderen erschüttert war. Und auch die Vejenter hielten dem Ansturm nicht stand.
+
+
+\noindent Interessant an \ref{necilli} ist, dass \lat{illi} und sein Antezedens nicht koreferent sind. Schließlich bezeichnet \lat{Veientem} das Gebiet um die Stadt Veji, während mit \lat{illi} die Einwohner von Veji gemeint sind. Dennoch ist sofort klar, was gemeint ist.
+Der Referend kann also durchaus auf eine Entität referieren, die nicht identisch mit dem Referenten des Antezedens ist, sondern nur auf irgendeine Weise mit ihm verbunden wird.
+Für solches \emph{Bridging} ist allerdings mehr Codingmaterial erforderlich als für eine Referenz, bei denen Referend und Antezedens koreferent sind.
+
+
+
+
+
+
+
+\section{Größeres Antezedens}
+\label{grInh}
+
+Im Prinzip kann jedes Pronomen auf ein größeres Antezedens, das heißt auf mehr als nur eine einfache NP referieren, doch kommt das bei \lat{ille} sehr selten vor und in meinem Corpus nur dann, wenn das Antezedens nicht im vorausgehenden Satz liegt.
+\lat{Is} und \lat{qui} haben in etwa jedem fünften Fall ein größeres Antezedens, \lat{hic} sogar fast in jedem zweiten.
+Zwei Fälle lassen sich finden, in denen fast nur \lat{hic} steht: Erstens dann, wenn das Antezedens sehr groß ist, und zweitens, wenn auf etwas referiert wird, das von einer Person der Handlung gesprochen wird.
+Außerdem ist zu bemerken, dass nur sehr selten mittels eines nichtattributiven maskulinen oder femininen Pronomens auf ein größeres Antezedens referiert wird.
+
+\begin{comment} Hier kommen Gedanken zur Deixis, von denen einige falsch sind.
+
+\section{Deixis}
+
+Bekanntlich können \lat{hic} und \lat{ille} deiktisch verwendet werden, wie in Beispiel~\ref{perhunc}, in dem die Referenz ohne Kenntnis des Kontexts nicht entschlüsselt werden kann.
+\lat{Is} gilt gemeinhin als nicht deiktisch. \footcite[Vgl.][§\,118 1\,a)]{kuehner}
+\footcite[Vgl.][§\,105 d)]{szantyr}
+Allerdings kommen in Liv. I sowie in vielen anderen lateinischen Werken Formulierungen wie \lat{ea tempestate} vor. \ref{eatempestate} ist ein Beispiel dafür. Es gibt kein Antezedens für \lat{ea tempestate}.
+
+\ex.
+\a.
+\label{perhunc}
+\lat{Brutus illis luctu occupatis, cultrum ex volnere Lucretiae extractum manante cruore prae se tenens, `Per hunc' inquit `castissimum ante regiam iniuriam sanguinem iuro, vosque, di, testes facio me L. Tarquinium Superbum} [\ldots] \lat{exsecuturum} [\ldots]\lat{'}
+\trans Während jene noch trauerten, hielt das Messer, das er aus der vor Blut triefenden Wunde der Lucretia herausgezogen hatte, vor sich und sagte: \glqq Bei diesem Blute, das vor dem Unrecht des Königs das allerreinste war, schwöre ich -- und euch, Götter, rufe ich als Zeugen an --, dass ich Lucius Tarquinius Superbus [\ldots] verfolgen werde [\ldots] \grqq
+
+\end{comment}
+
+\section{Fazit}
+
+In den meisten Fällen folgt der Gebrauch von Pronomina in Liv. 1 den folgenden Regeln.
+Kataphorische Referenz geschieht normalerweise durch \lat{is}, bei großen Postzedenzien durch \lat{hic} oder \lat{ille}.
+Bei anaphorischer Referenz sind alle vier Pronomina meist topikal, \lat{qui} sogar immer.
+Dienen sie zum Topikwechsel oder sind anderweitig kontrastiv, so stehen sie initial.
+In fokalen Phrasen kommen Pronomina meist attributiv vor.
+Fokale Pronomina stehen i.\,A. nicht initial.
+Topikalisierung geschieht v.\,a. durch \lat{hic}, \lat{is} und \lat{qui}, nur selten durch \lat{ille}.
+Bei deiktischer Verwendung sind Pronomina häufiger fokal als bei anaphorischer und stehen häufiger intern.
+\lat{Ille} wird besonders häufig kontrastiv verwendet.
+
+
+
+
+
+
+
+\newpage %oder doch besser \pagebreak?
+
+%\cntrl{Referent zu Antezedens verbessert?}
+
+\nocite{*}
+\printbibheading
+\printbibliography[keyword=primary,title={Primärliteratur}]
+\printbibliography[keyword=secondary,title={Sekundärliteratur}]
+
+
+\end{document}
