@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--
+Folgende Dinge gilt es noch zu beachten: Die aktuelle Seite sollte als Variable festgelegt werden, damit der Link zu der jeweiligen Seite mit <span> und nicht mit <a> markiert werden kann. Das heißt, dass bei jedem <li> eine If-Funktion verwendet werden muss, um zwischen <a> und <span> zu unterscheiden. Ich würde außerdem noch die <h1>-Überschrift der Seite als Link auf die Startseite machen.
+
+Grundlegendes Layout nachdem das Stylesheet eingebunden wurde: (Das kann natürlich auch noch in die header.php)
+
+<div id="wrap">
+    <div id="header">
+        <h1>Heidelberger Hausarbeiten</h1>
+        <div id="navigation_top">
+            <ul>
+                <li><span>Aktuelle Seite</span></li>
+                <li><a href="#">Ein Link</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="content">
+        <div id="navigation_left">
+            <ul>
+                <li><span>Aktuelle Seite</span></li>
+                <li><a href="#">Arbeit hochladen</a></li> usw.
+            </ul>
+        </div>
+    <div id="main">
+    ...
+    </div>
+</div>
+-->
+<html>
+	<head>
+		<title>Zum Gebrauch von Pronomina bei Titus Livius | HeiHa</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="style.css" type="text/css">
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="header">
+				<h1>Heidelberger Hausarbeiten</h1>
+                <div id="navigation_top">
+                    <ul>
+                        <li><span>Profil</span></li>
+                        <li><a href="#">Ausloggen</a></li>
+                    </ul>
+                </div>
+			</div>
+			<div id="content">
+                <div id="navigation_left">
+				<ul><li><a href="/">Startseite</a></li><li><a href="uploadsite.php">Arbeit hochladen</a></li><li><a href="searchpapersite.php">Arbeit suchen</a></li><li><a href="searchusersite.php">Benutzer suchen</a></li></ul>			</div>
+				<div id="main">
+					<h2>Zum Gebrauch von Pronomina bei Titus Livius</h2>
+					
+	<table id="paper">
+		<tr>
+			<td class="left">Titel</td>
+			<td>Zum Gebrauch von Pronomina bei Titus Livius</td>
+		</tr>
+
+		<tr>
+			<td class="left">Untertitel</td>
+			<td></td>
+		</tr>
+
+		<tr>
+			<td class="left">Autor</td>
+			<td>Simon Will (<a href="viewprofile.php?username=gorgor">gorgor</a>)</td>
+		</tr>
+
+		
+
+		<tr>
+			<td class="left">Hochschule</td>
+			<td>Ruprecht-Karls-Universität Heidelberg</td>
+		</tr>
+
+		<tr>
+			<td class="left">Abriss</td>
+			<td>In dieser Arbeit wird untersucht, wie Livius die Pronomina is, hic, ille und qui verwendet.</td>
+		</tr>
+
+		<tr>
+			<td class="left">Fach 1</td>
+			<td><a href="http://localhost/searchpaperaction.php?and_or=or&field1=Klassische Philologie">Klassische Philologie</a></td>
+		</tr>
+
+		<tr>
+			<td class="left">Fach 2</td>
+			<td><a href="http://localhost/searchpaperaction.php?and_or=or&field1=Latinistik">Latinistik</a></td>
+		</tr>
+
+		<tr>
+			<td class="left">Fach 3</td>
+			<td><a href="http://localhost/searchpaperaction.php?and_or=or&field1=Sprachwissenschaft">Sprachwissenschaft</a></td>
+		</tr>
+
+		<tr>
+			<td colspan="2" class="no-borders">
+				<center>
+					<a href="papers/Zum Gebrauch von Pronomina bei Titus Livius.pdf">
+						<button class="button">Arbeit lesen</button>
+					</a>
+				</center>
+			</td>
+		</tr>
+	</table>
+	
+	<!-- here begins the comment section -->
+	<div id="commentsection">
+        <h2>Kommentare</h2>
+		<div id="commentcontainer">
+			
+
+			<div class="comment">
+				
+                    <table class="no-borders"><tr><td class="commentname">Lamapups</td><td class="commentdate">am 15. Februar 2015 um 10.45 Uhr</td></tr>
+				 <!-- end of commenttitle -->
+				
+                        <tr><td colspan="2">Jetzt aber! Das müsste jetzt passe.</td></tr>
+				 <!-- end of commenttext --></table>
+			</div> <!-- end of comment -->
+
+			
+
+			<div class="comment">
+				  <table class="no-borders"><tr><td class="commentname">Lamapups</td><td class="commentdate">am 13. Februar 2015 um 10.25 Uhr</td></tr>
+				 <!-- end of commenttitle -->
+				
+                        <tr><td colspan="2">Und noch ein w ert euruth liertue heruthue hrtuheurthurelht leiuhtiehtlieure htlireht leirhtuiehrlite hithier htuireht uetheluheiutherth ielrhtli rehterht ielhtlireth ureht irethuthirethie htiehr giuehgiurhirh iunderschöner Kommentar!</td></tr>
+				 <!-- end of commenttext --></table>
+			</div> <!-- end of comment -->
+
+			
+
+			<div class="comment">
+				  <table class="no-borders"><tr><td class="commentname">Lamapups</td><td class="commentdate">am 15. Februar 2015 um 10.45 Uhr</td></tr>
+				 <!-- end of commenttitle -->
+				
+                        <tr><td colspan="2">Tabellen sind praktisch.</td></tr>
+				 <!-- end of commenttext --></table>
+			</div> <!-- end of comment -->
+
+			
+		</div> <!-- end of commentcontainer -->
+
+		<div id="commentinput">
+			
+		<form action="postcomment.php" method="post">
+			<h2>Dein Kommentar</h2>
+            <div id="commentfields">
+			<label for="commenttitle"><h3>Titel</h3></label><input style="margin-bottom:1em;" class="searchfield" name="commenttitle" value="gorgor">
+			<label for="commenttext"><h3>Kommentar</h3></label>
+
+			<textarea class="textfield" name="commenttext"></textarea> 
+			<input type="hidden" name="papertitle" value="Zum Gebrauch von Pronomina bei Titus Livius">
+			<center><input type="submit" value="Kommentieren" name="comment"  class="button"></center>
+                </div>
+		</form>
+		</div> <!-- end of commentinput -->
+	</div> <!-- end of commentsection -->
+
+
+				</div>
+			</div>
+			<div id="footer">
+				<div class="footer_half">
+					<p>&copy; Simon Will 2015</p>
+				</div>
+				<div class="footer_half" class="t_align_right">
+					<p>Dank an die <a href="http://www.klassphil.stura.uni-heidelberg.de">Fachschaft Klassische Philologie Heidelberg</a></p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
