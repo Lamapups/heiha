@@ -1,0 +1,240 @@
+/* Farbe des Siegels der Uni Heidelberg: #C61826*/
+body {
+	padding: 0;
+	margin: 0;
+	background: #fff;
+	font-family: Arial, Tahoma, Verdana, sans-serif;
+    font-size:14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	padding: 0;
+	margin: 0;
+    color: #C61826;
+}
+
+h1 {
+    font-size: 210%;
+    padding-bottom:  1em;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    /*border-bottom: 2px #cccccc solid;*/
+}
+
+h2 {
+    font-size: 150%;
+    margin:0;
+    margin-bottom:1em;
+}
+
+h3 {
+    font-size:100%;
+}
+
+#wrap {
+	width: 880px;
+	background: #fff;
+	margin-left: auto;
+    margin-right: auto;
+	padding: 20px;
+    
+}
+
+#header{
+    border-bottom: 2px solid #cccccc;
+    margin:0 0 1.5em 0;
+    
+}
+
+#wrap p{
+    text-align:justify;
+    line-height: 130%;
+}
+
+#header p {
+	padding: 0;
+	margin: 0;
+	clear: both;
+}
+
+#navigation_top ul {
+    text-align: right;
+    margin: 0;
+    pading: 0;
+    margin-right:50px;
+    /* weitere Angaben */
+}
+ 
+#navigation_top li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    /* weitere Angaben */
+}
+ 
+#navigation_top a, #navigation_top span {
+    display: block;
+    text-align:center;
+    width:8em;
+    padding: 0.5em 0;
+    border: 1px solid #D1D1D1;
+    border-bottom: 0;
+    color: black;
+    text-decoration:none;
+    background-color:#F7F7F7;
+    /* weitere Angaben */
+}
+
+#navigation_top span{
+    font-weight:bold !important;
+    background-color:#f1f1f1 !important;
+}
+
+#navigation_top ul a:hover, #navigation_top ul span:hover {
+    background-color:#f1f1f1;
+}
+
+#navigation_left{
+    float:left;
+    width:200px;
+}
+
+#navigation_left ul{
+	width: 12em;
+    margin: 0 0.8em 0 0; padding: 0.8em;
+    background-color: white;
+}
+
+#navigation_left ul li {
+	list-style: none;
+    margin: 0; padding: 0;
+}
+
+#navigation_left ul a, #navigation_left ul span {
+	display:block;
+    padding: 0.4em 0.4em 0.4em 0.4em;
+    text-decoration: none;
+    border-bottom: 1px solid #D1D1D1;
+    color: black;
+    margin: 0.4em 0 0.4em 0;
+}
+
+#navigation_left ul a:hover {
+    color: black; background-color: #f1f1f1;
+}
+
+#navigation_left ul span {
+    font-weight: bold;
+    background-color: #f1f1f1;
+}
+
+#content {
+	clear: both;
+	overflow: hidden;
+}
+
+#main {
+	width: 620px;
+	padding-left: 0.8em;
+	float: left;
+    border-left: 2px solid #cccccc;
+}
+
+#footer {
+	clear: both;
+	overflow: hidden;
+	margin: 1.5em 0 0 0;
+	border-top: 2px solid #cccccc;
+}
+
+.footer_half {
+	width: 50%;
+	float: left;
+}
+
+.t_align_right {
+	text-align: right;
+    float:right;
+}
+
+fieldset {
+    border: 1px #cccccc solid;
+}
+
+.searchfield {
+    width:250px;
+}
+
+.button {
+    margin-top:1em;
+    margin-bottom:1em;
+    background-color:#F7F7F7;
+    border: 1px solid #D1D1D1;
+    padding:5px;
+    font-weight:bold;
+}
+
+.no-borders{
+    border:0 !important;
+}
+
+.button:hover{
+    background-color:#f1f1f1;
+}
+
+table#paper{
+    margin:0;
+    padding:0;
+}
+
+table#paper td{
+    padding:5px;
+    border:1px solid #d1d1d1;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    margin:0;
+}
+
+table#paper tr{
+    margin:0;
+    padding:0;
+}
+
+table#paper td.left{
+    width:100px;
+    text-align:right;
+    font-weight:bold;
+}
+
+.comment {
+    width:590px;
+    margin:0 0 1em 0;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 0px solid #D1D1D1;
+}
+
+.commentname{
+    width:250px;
+    color: #C61826;
+    font-weight:bold;
+    font-size:120%;
+}
+
+.commentdate{
+    text-align:right;
+    width:390px;
+    font-size: 80%;
+    color:#5E5E5E;
+}
+
+#commentfields{
+    margin-left:15px;
+}
+
+.textfield {
+    width:510px;
+    height:200px;
+    font-family: Arial, Tahoma, Verdana, sans-serif;
+}
